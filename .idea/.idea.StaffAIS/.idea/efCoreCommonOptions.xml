@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EfCoreCommonOptions">
+    <option name="migrationsToStartupProjects">
+      <map>
+        <entry key="e12b4245-938b-4bd1-a55c-979b70b3f505" value="e12b4245-938b-4bd1-a55c-979b70b3f505" />
+      </map>
+    </option>
+    <option name="startupToMigrationsProjects">
+      <map>
+        <entry key="e12b4245-938b-4bd1-a55c-979b70b3f505" value="e12b4245-938b-4bd1-a55c-979b70b3f505" />
+      </map>
+    </option>
+  </component>
+</project>

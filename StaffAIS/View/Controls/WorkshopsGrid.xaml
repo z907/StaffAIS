@@ -1,0 +1,55 @@
+<UserControl x:Class="StaffAIS.View.Controls.WorkshopsGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:StaffAIS.View.Controls"
+        xmlns:viewModel="clr-namespace:StaffAIS.ViewModel"
+        mc:Ignorable="d"
+        Background="{StaticResource DefaultColorBrush}"
+        d:DesignHeight="600" d:DesignWidth="600">
+    
+        <UserControl.DataContext>
+            <viewModel:WorkshopsGridVm></viewModel:WorkshopsGridVm>
+        </UserControl.DataContext>
+    
+   <Grid>
+        <Grid Background="{StaticResource DefaultColorBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource DefaultColorBrush}" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            <Button Style="{StaticResource ControlButton}" Command="{Binding Add}"  Grid.Column="1">
+                 <TextBlock Style="{StaticResource ButtonText}">Добавить</TextBlock>
+            </Button>
+            <Button Style="{StaticResource ControlButton}" Command="{Binding Edit}" Grid.Column="2">
+                <TextBlock Style="{StaticResource ButtonText}">Изменить</TextBlock>
+            </Button>
+            <Button Style="{StaticResource ControlButton}" Command="{Binding Delete}" Grid.Column="3">
+               <TextBlock Style="{StaticResource ButtonText}">Удалить</TextBlock>
+            </Button>
+        </Grid>
+            <ScrollViewer Style="{StaticResource DefaultScroller}" Background="{StaticResource DefaultColorBrush}"  VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                <DataGrid  Style="{StaticResource DefaultDataGrid}" MouseDown="dataGrid1_MouseLeftButtonDown" SelectedItem="{Binding Path=SelectedWorkshop, Mode=TwoWay}"
+                           AutoGenerateColumns="True" x:Name="ChGrid" ItemsSource="{Binding Workshops}" >
+                </DataGrid>
+                
+        </ScrollViewer>
+        
+    </Grid>
+    </Grid>
+</UserControl>

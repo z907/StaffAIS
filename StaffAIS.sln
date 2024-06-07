@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffAIS", "StaffAIS\StaffAIS.csproj", "{B7BF743D-9222-4D16-87EC-B5326AC5DF31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{E12B4245-938B-4BD1-A55C-979B70B3F505}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7BF743D-9222-4D16-87EC-B5326AC5DF31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BF743D-9222-4D16-87EC-B5326AC5DF31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BF743D-9222-4D16-87EC-B5326AC5DF31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BF743D-9222-4D16-87EC-B5326AC5DF31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E12B4245-938B-4BD1-A55C-979B70B3F505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E12B4245-938B-4BD1-A55C-979B70B3F505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E12B4245-938B-4BD1-A55C-979B70B3F505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E12B4245-938B-4BD1-A55C-979B70B3F505}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
