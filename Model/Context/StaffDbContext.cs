@@ -44,7 +44,7 @@ public partial class StaffDbContext : DbContext
 
         modelBuilder.Entity<Record>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(e => e.Id).HasName("Records_pkey");
 
             entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.WorkerId).HasColumnName("Worker_id");

@@ -35,7 +35,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="View\Icons\" />
+      <None Remove="View\Icons\Calendar.png" />
+      <Resource Include="View\Icons\Calendar.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
 
 </Project>

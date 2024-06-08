@@ -17,5 +17,5 @@ public class DateDict
             {11,"Ноябрь"},
             {12,"Декабрь"}
         };
-   public List<int> YearList = Enumerable.Range((DateTime.Now.Year - 10), 13).ToList();
+   public static List<int> YearList = Enumerable.Range((DateTime.Now.Year - 10), 13).ToList();
 }

@@ -26,4 +26,9 @@ public class PlanService:BaseService
         db.Plans.Add(item);
         db.SaveChanges();
     }
+
+    public Plan GetPlanById(int id)
+    {
+        return db.Plans.Find(id);
+    }
 }

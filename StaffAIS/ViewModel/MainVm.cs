@@ -60,12 +60,17 @@ public class MainVm:BaseVm
     {
         get;
     }
+    public ICommand ShowRecords
+    {
+        get;
+    }
     public MainVm()
     {
         UserName = Thread.CurrentPrincipal.Identity.Name;
         ShowUsers=new VmCommand(ShowUsersCommand,CanShowUsersCommand);
         ShowWorkshops=new VmCommand(ShowWorkshopsCommand,CanShowWorkshopsCommand);
         ShowPlans=new VmCommand(ShowPlansCommand,CanShowPlansCommand);
+        ShowRecords = new VmCommand(ShowRecordsCommand, CanShowRecordsCommand);
         IsUserAdmin = CheckRole();
     }
 
@@ -88,6 +93,17 @@ public class MainVm:BaseVm
         gr.Children.Add(item);
     }
     private bool CanShowPlansCommand(object obj)
+    {
+        return true;
+    }
+    private void ShowRecordsCommand(object obj)
+    {
+        Grid gr = obj as Grid;
+        gr.Children.Clear();
+        RecordGrid item = new RecordGrid();
+        gr.Children.Add(item);
+    }
+    private bool CanShowRecordsCommand(object obj)
     {
         return true;
     }

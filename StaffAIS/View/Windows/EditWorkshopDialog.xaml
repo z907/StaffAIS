@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource DefaultDialog}"
-        Title="Добавление" Height="300" Width="300"
+        Title="Изменение" Height="300" Width="300"
         Background="{StaticResource DefaultColorBrush}"
         MouseDown="Window_MouseDown">
    

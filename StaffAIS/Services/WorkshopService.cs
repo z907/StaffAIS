@@ -21,6 +21,13 @@ public class WorkshopService:BaseService
             LastMonthProduction=GetProductionForLastMonth(w.Id)
         }).ToList();
     }
+    public List<Workshop> GetWorkshopsDefault()
+    {
+        
+        db.Records.Load();
+        db.Workers.Load();
+        return db.Workshops.Include(w=>w.Workers).ToList();
+    }
 
     private int GetProductionForLastMonth(int wId)
     {
