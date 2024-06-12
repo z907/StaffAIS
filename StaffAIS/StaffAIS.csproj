@@ -21,6 +21,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="CsvHelper" Version="32.0.3" />
+      <PackageReference Include="LiveCharts" Version="0.9.7" />
+      <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
         <PrivateAssets>all</PrivateAssets>
@@ -37,6 +40,30 @@
     <ItemGroup>
       <None Remove="View\Icons\Calendar.png" />
       <Resource Include="View\Icons\Calendar.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\Plan.png" />
+      <Resource Include="View\Icons\Plan.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\Record.png" />
+      <Resource Include="View\Icons\Record.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\Report1Icon.png" />
+      <Resource Include="View\Icons\Report1Icon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\UserIcon.png" />
+      <Resource Include="View\Icons\UserIcon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\UsersIcon.png" />
+      <Resource Include="View\Icons\UsersIcon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Resource>
+      <None Remove="View\Icons\Workshop.png" />
+      <Resource Include="View\Icons\Workshop.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Resource>
     </ItemGroup>

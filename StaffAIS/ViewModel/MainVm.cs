@@ -64,6 +64,18 @@ public class MainVm:BaseVm
     {
         get;
     }
+    public ICommand ShowWorkers
+    {
+        get;
+    }
+    public ICommand ShowProdReport
+    {
+        get;
+    }
+    public ICommand ShowPlanReport
+    {
+        get;
+    }
     public MainVm()
     {
         UserName = Thread.CurrentPrincipal.Identity.Name;
@@ -71,9 +83,46 @@ public class MainVm:BaseVm
         ShowWorkshops=new VmCommand(ShowWorkshopsCommand,CanShowWorkshopsCommand);
         ShowPlans=new VmCommand(ShowPlansCommand,CanShowPlansCommand);
         ShowRecords = new VmCommand(ShowRecordsCommand, CanShowRecordsCommand);
+        ShowWorkers = new VmCommand(ShowWorkersCommand,CanShowWorkersCommand);
+        ShowProdReport = new VmCommand(ShowProdReportCommand,CanShowProdReportCommand);
+        ShowPlanReport = new VmCommand(ShowPlanReportCommand,CanShowPlanReportCommand);
         IsUserAdmin = CheckRole();
     }
 
+    private void ShowPlanReportCommand(object obj)
+    {
+        Grid gr = obj as Grid;
+        gr.Children.Clear();
+        PlanReport item = new PlanReport();
+        gr.Children.Add(item);
+    }
+    private bool CanShowPlanReportCommand(object obj)
+    {
+        return true;
+    }
+    private void ShowProdReportCommand(object obj)
+    {
+        Grid gr = obj as Grid;
+        gr.Children.Clear();
+        ProdReport item = new ProdReport();
+        gr.Children.Add(item);
+    }
+    private bool CanShowProdReportCommand(object obj)
+    {
+        return true;
+    }
+    
+    private void ShowWorkersCommand(object obj)
+    {
+        Grid gr = obj as Grid;
+        gr.Children.Clear();
+        WorkersGrid item = new WorkersGrid();
+        gr.Children.Add(item);
+    }
+    private bool CanShowWorkersCommand(object obj)
+    {
+        return true;
+    }
     private void ShowWorkshopsCommand(object obj)
     {
         Grid gr = obj as Grid;

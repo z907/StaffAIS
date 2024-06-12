@@ -46,10 +46,9 @@ public partial class StaffDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("Records_pkey");
 
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.WorkerId).HasColumnName("Worker_id");
 
-            entity.HasOne(d => d.Worker).WithMany()
+            entity.HasOne(d => d.Worker).WithMany(p => p.Records)
                 .HasForeignKey(d => d.WorkerId)
                 .HasConstraintName("Records_Worker_id_fkey");
         });

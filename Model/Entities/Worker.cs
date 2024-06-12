@@ -17,5 +17,9 @@ public partial class Worker
 
     public int? WorkshopId { get; set; }
 
+    public int? Wage { get; set; }
+
+    public virtual ICollection<Record> Records { get; set; } = new List<Record>();
+
     public virtual Workshop? Workshop { get; set; }
 }

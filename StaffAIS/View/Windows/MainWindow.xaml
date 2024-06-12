@@ -81,36 +81,29 @@
                 </Button>
             </Grid>
             </Border>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="1" />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="1" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowTodayListCommand}" >
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/UsersIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="1" />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="1" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowWorkers}" >
                <TextBlock Style="{StaticResource ButtonText}">Работники</TextBlock>
             </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="2" />
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/Plan.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="2" />
             <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="2" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowPlans}" >
                 <TextBlock Style="{StaticResource ButtonText}">Планы</TextBlock>
             </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="3" />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="3" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowTodayListCommand}" >
-                <TextBlock Style="{StaticResource ButtonText}">Цеха</TextBlock>
-            </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="3" />
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/Record.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="3" />
             <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="3" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowRecords}" >
                 <TextBlock Style="{StaticResource ButtonText}">Выработка</TextBlock>
             </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="4" />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="4" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowTodayListCommand}" >
-                <TextBlock Style="{StaticResource ButtonText}">Цеха</TextBlock>
-            </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="4" />
+           
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/Workshop.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="4" />
             <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="4" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowWorkshops}" >
                 <TextBlock Style="{StaticResource ButtonText}">Цеха</TextBlock>
             </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="5" />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="5" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowTodayListCommand}" >
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/Report1Icon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="5" />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="5" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowProdReport}" >
                 <TextBlock  Style="{StaticResource ButtonText}">График выхода продукции</TextBlock>
             </Button>
-            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/ResIcon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="6" />
-            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="6" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowTodayListCommand}" >
+            <Image RenderOptions.BitmapScalingMode="HighQuality" Source="/View/Icons/Report1Icon.png" Margin="15,5,5,10" Width="30" Height="30" Grid.Column="0"   Grid.Row="6" />
+            <Button Grid.Column="1" Style="{StaticResource MainMenuButton}" Grid.Row="6" CommandParameter="{Binding ElementName=SelectedItem}" Command="{Binding ShowPlanReport}" >
                 <TextBlock Style="{StaticResource ButtonText}">График соответствия плану</TextBlock>
             </Button>
           

@@ -1,19 +1,13 @@
 using System.Windows;
 using System.Windows.Input;
-using StaffAIS.ViewModel;
 
 namespace StaffAIS.View.Windows;
 
-public partial class EditRecordDialog : Window
+public partial class AddWorkerDialog : Window
 {
-    public EditRecordDialog()
+    public AddWorkerDialog()
     {
         InitializeComponent();
-    }
-    public EditRecordDialog(int id)
-    {
-        InitializeComponent();
-        (this.DataContext as EditRecordVm).UpdateData(id);
     }
     private void Window_MouseDown(object sender, MouseButtonEventArgs e)
     {

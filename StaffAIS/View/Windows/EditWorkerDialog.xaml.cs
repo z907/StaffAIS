@@ -4,16 +4,11 @@ using StaffAIS.ViewModel;
 
 namespace StaffAIS.View.Windows;
 
-public partial class EditRecordDialog : Window
+public partial class EditWorkerDialog : Window
 {
-    public EditRecordDialog()
+    public EditWorkerDialog()
     {
         InitializeComponent();
-    }
-    public EditRecordDialog(int id)
-    {
-        InitializeComponent();
-        (this.DataContext as EditRecordVm).UpdateData(id);
     }
     private void Window_MouseDown(object sender, MouseButtonEventArgs e)
     {
@@ -23,5 +18,10 @@ public partial class EditRecordDialog : Window
     private void CloseClick(object sender, RoutedEventArgs e)
     {
         this.DialogResult = false;
+    }
+    public EditWorkerDialog(int id)
+    {
+        InitializeComponent();
+        (this.DataContext as EditWorkerVm).LoadData(id);
     }
 }

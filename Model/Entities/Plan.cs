@@ -11,6 +11,6 @@ public partial class Plan
     public string? Month { get; set; }
     [DisplayName("Год")]
     public string? Year { get; set; }
-    [DisplayName("Кол-во продукции")]
+    [DisplayName("Количество")]
     public int? Quantity { get; set; }
 }

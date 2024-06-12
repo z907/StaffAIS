@@ -71,4 +71,16 @@ public class WorkshopService:BaseService
     {
         return db.Workshops.Find(id);
     }
+
+    public int GetWorkshopNumber(int recId)
+    {
+        db.Workers.Load();
+        db.Workshops.Load();
+        return (int)db.Records.Include(r => r.Worker).Where(r=>r.Id==recId).Include(r=>r.Worker.Workshop).First().Worker.Workshop.Number;
+    }
+
+    public Dictionary<int, string> GetWorkshopsDict()
+    {
+        return db.Workshops.Select(w => new { Id=w.Id, Number=w.Number.ToString() }).ToDictionary(arg =>arg.Id,v=>v.Number );
+    }
 }

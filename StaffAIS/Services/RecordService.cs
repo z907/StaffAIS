@@ -29,7 +29,7 @@ public class RecordService:BaseService
         db.Remove(db.Records.Find(id));
         db.SaveChanges();
     }
-    public void EditRecord(DisplayRecord item)
+    public void EditRecord(Record item)
     {
         var a = db.Records.Find(item.Id);
         a.Quantity = item.Quantity;

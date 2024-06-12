@@ -1,0 +1,78 @@
+<UserControl x:Class="StaffAIS.View.Controls.WorkersGrid"
+                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:StaffAIS.View.Controls"
+             mc:Ignorable="d"
+             xmlns:g="clr-namespace:StaffAIS.Global"
+             xmlns:viewModel1="clr-namespace:StaffAIS.ViewModel"
+             d:DesignHeight="800" d:DesignWidth="800"
+             Background="{StaticResource DefaultColorBrush}">
+    <UserControl.Resources>
+        <g:DateConverter x:Key="conv" ></g:DateConverter>
+    </UserControl.Resources> 
+    <UserControl.DataContext>
+        <viewModel1:WorkersGridVm></viewModel1:WorkersGridVm>
+    </UserControl.DataContext>
+        <Grid Background="{StaticResource DefaultColorBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Background="{StaticResource DefaultColorBrush}" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220" />
+                    <ColumnDefinition Width="360" />
+                    <ColumnDefinition Width="250" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Button  Style="{StaticResource ControlButton}" Command="{Binding Add}" Grid.Column="0">
+                        <TextBlock Style="{StaticResource ButtonText}">Добавить</TextBlock>
+                    </Button>
+                    <Button Grid.Row="0" Style="{StaticResource ControlButton}" Command="{Binding Delete}"  Grid.Column="1">
+                        <TextBlock Style="{StaticResource ButtonText}">Удалить</TextBlock>
+                    </Button>
+                    <Button Grid.Row="0"  Style="{StaticResource ControlButton}" Command="{Binding Edit}" Grid.Column="2">
+                        <TextBlock Style="{StaticResource ButtonText}">Изменить</TextBlock>
+                    </Button>
+                    <Button Grid.Row="0" Style="{StaticResource ControlButton}" Command="{Binding Report}" >
+                        <TextBlock Style="{StaticResource ButtonText}">Отчет по ЗП</TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Style="{StaticResource CaptionsText}" Width="100" Height="20" >Номер цеха:</TextBlock>
+                    <ComboBox SelectedValuePath="Value" DisplayMemberPath="Value" Margin="5"  Style="{StaticResource ComboBoxFlatStyle}"  ItemsSource="{Binding Mode=OneWay, Path=Workshops}"  x:Name="c1" SelectedValue="{Binding Mode=TwoWay, Path=SelectedWorkshop}"  Width="110" Height="30" >
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock  Style="{StaticResource CaptionsText}" Width="180" Height="20" >Выплаты за период</TextBlock>
+                    <TextBlock Margin="5,0,0,0" VerticalAlignment="Center" Style="{StaticResource CaptionsText}" Width="20" Height="20" >С:</TextBlock>
+                    <DatePicker Margin="5"   Style="{StaticResource DefaultDatePicker}"  SelectedDate="{Binding Mode=TwoWay,Converter={StaticResource conv},  Path=StartDate}" x:Name="d1"  Width="150" Height="30">
+                    </DatePicker>
+                </StackPanel>
+                <StackPanel   Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+                    
+                    <TextBlock  Style="{StaticResource CaptionsText}" Width="30" Height="20" >По:</TextBlock>
+                <DatePicker Margin="5"   Style="{StaticResource DefaultDatePicker}"  SelectedDate="{Binding Mode=TwoWay,Converter={StaticResource conv},  Path=EndDate}" x:Name="d2"  Width="150" Height="30">
+                </DatePicker>
+                </StackPanel>
+                
+               
+                    
+            </Grid>
+            <ScrollViewer  Style="{StaticResource DefaultScroller}" Background="{StaticResource DefaultColorBrush}"  VerticalScrollBarVisibility="Visible" Grid.Row="1">
+                <DataGrid  Style="{StaticResource DefaultDataGrid}" MouseDown="dataGrid1_MouseLeftButtonDown" SelectedItem="{Binding Path=SelectedWorker, Mode=TwoWay}"
+                           AutoGenerateColumns="True" x:Name="WkGrid" ItemsSource="{Binding Workers}" >
+                </DataGrid>
+            </ScrollViewer>
+
+    </Grid>
+</UserControl>
