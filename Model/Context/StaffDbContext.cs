@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Model.Entities;
+using Microsoft.Extensions.Configuration;
 
 namespace Model.Context;
 
@@ -30,7 +31,12 @@ public partial class StaffDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=Staff;Username=postgres;Password=zv1488");
+    {
+        var builder = new ConfigurationBuilder().AddJsonFile("AppSettings.json",false,false);
+        var config = builder.Build();
+        var connection= config.GetSection("Connections").GetSection("pgsConnectionString").Value;
+        optionsBuilder.UseNpgsql(connection);
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

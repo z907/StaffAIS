@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Model.Entities;
 using Npgsql;
+using StaffAIS.Global;
 using ViewModel.VmEntities;
 
 namespace StaffAIS.Services;
@@ -74,7 +75,7 @@ public class ReportService:BaseService
         List<PlanReportData> l = new List<PlanReportData>();
         for (int i = 1; i <= 12; i++)
         {
-            if (db.Plans.ToList().Exists(p => Convert.ToInt32(p.Year) == year)) l.Add(new PlanReportData{Month = i,Quantity = Convert.ToInt32(db.Plans.First(p => Convert.ToInt32(p.Year) == year).Quantity)}) ;
+            if (db.Plans.ToList().Exists(p => Convert.ToInt32(p.Year) == year && p.Month==DateDict.Months[i])) l.Add(new PlanReportData{Month = i,Quantity = Convert.ToInt32(db.Plans.First(p => Convert.ToInt32(p.Year) == year && p.Month==DateDict.Months[i]).Quantity)}) ;
             else l.Add(new PlanReportData{Month = i,Quantity = 0});
         }
 

@@ -15,6 +15,6 @@ public class DisplayWorker
     public DateOnly? HireDate { get; set; }
     [DisplayName("Номер цеха")]
     public int? WorkshopNumber{ get; set; }
-    [DisplayName("Зарплата")]
+    [DisplayName("Ставка")]
     public int? Wage{ get; set; }
 }
